@@ -25,7 +25,7 @@ export class LoginComponent {
       email: this.form.get('email')?.value,
       password: this.form.get('password')?.value,
     };
-     axios.post('http://localhost:3000/login', body).then((res) => {
+     axios.post('https://express-pg-register-login.onrender.com/login', body).then((res) => {
       if(res.status === 200){
         this.router.navigate(['/main'])
       } 

@@ -13,7 +13,7 @@ export class MainComponent {
     this.setData();
   }
   public async setData() {
-    await axios.post('http://localhost:3000/getAllData').then((res) => {
+    await axios.post('https://express-pg-register-login.onrender.com/getAllData').then((res) => {
       this.data = res.data;
     })
   }
