@@ -1,0 +1,18 @@
+<body>
+  <div class="container">
+    <div class="form-container">
+      <h2>Register</h2>
+      <form id="register-form" [formGroup]="form">
+        <input type="text" id="register-name" placeholder="Name" formControlName="name" >
+        <input type="text" id="register-phone" placeholder="Phone Number" formControlName="phoneNumber" >
+        <input type="email" id="register-email" placeholder="Email" formControlName="email" >
+        <input type="password" id="register-password" placeholder="Password" formControlName="password" > 
+        <p class="fail" *ngIf="unSuccess">Email already exist !!</p>
+        <p class="success"  *ngIf="success">Register Success !!</p>
+        <p class="validate"  *ngIf="checkValidate">กรุณากรอกข้อมูลให้ครบถ้วน !!</p>
+        <button type="submit" (click)="submit()" >Register</button>
+        <button type="submit" (click)="toLogin()" >Login</button>
+      </form>
+    </div>
+  </div>
+</body>
