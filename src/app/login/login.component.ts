@@ -26,8 +26,9 @@ export class LoginComponent {
       email: this.form.get('email')?.value,
       password: this.form.get('password')?.value,
     };
-     axios.post('https://express-pg-register-login.onrender.com/login', body).then((res) => {
-      if(res.status === 200){
+     await axios.post('https://express-pg-register-login.onrender.com/login', body).then((res) => {
+      console.log(res)
+      if(res.data.success){
         this.validate = false;
         this.router.navigate(['/main'])
       }else {

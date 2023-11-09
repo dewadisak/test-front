@@ -44,7 +44,7 @@ export class RegisterComponent implements OnInit {
     console.log(body)
     if(body.name && body.email && body.password && body.phoneNumber){
       await axios.post('https://express-pg-register-login.onrender.com/register', body).then((res) => {
-        if(res.status === 200){
+        if(res.data.success){
           this.success = true;
           this.router.navigate(['/login'])
         } 
