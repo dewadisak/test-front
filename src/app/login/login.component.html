@@ -5,8 +5,10 @@
       <form id="login-form"  [formGroup]="form" >
         <input type="email" id="login-email" placeholder="Email" formControlName="email">
         <input type="password" id="login-password" placeholder="Password" formControlName="password">
+        <div class="invalid" *ngIf="validate">invalid email or password</div>
         <button type="submit" (click)="login()">Login</button>
       </form>
+      <p (click)="toRegister()">to register ?</p>
     </div>
   </div>
 </body>

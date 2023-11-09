@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import axios from 'axios';
 
 @Component({
@@ -9,13 +10,18 @@ import axios from 'axios';
 export class MainComponent {
   public data: any;
 
-  constructor() {
+  constructor(
+    private router: Router
+  ) {
     this.setData();
   }
   public async setData() {
-    await axios.post('https://express-pg-register-login.onrender.com/getAllData').then((res) => {
+    await axios.post('http://localhost:3000/getAllData').then((res) => {
       this.data = res.data;
     })
+  }
+  public async logOut(){
+    this.router.navigate(['/login'])
   }
 
 }
